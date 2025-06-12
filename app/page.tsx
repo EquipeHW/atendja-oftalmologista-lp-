@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import Image from "next/image"
 import {
   Eye,
   Phone,
@@ -25,7 +26,7 @@ export default function OftalmologiaLP() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white font-oscine">
       {/* Navbar */}
       <header className="bg-white shadow-sm border-b">
         <div className="container max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
@@ -52,20 +53,19 @@ export default function OftalmologiaLP() {
       </header>
 
       {/* Hero Section */}
-      <section  className="text-white py-16 md:py-24 relative overflow-hidden"
+      <section 
+        className="text-white py-16 md:py-14 relative overflow-hidden font-oscine"
         style={{
-          background: `linear-gradient(135deg, #008B47 0%, #2EA55C 50%, #8dbf44 100%)`,
-        }}>
+          background: `linear-gradient(135deg, #008B47 0%, #2EA55C 50%, #8DBF44 100%)`,
+        }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <Badge className="bg-[#8DBF44]/10 text-[#fff] border-[#fff]/20">
-                <AlertTriangle className="h-4 w-4 mr-1" />
-                Não espere perder qualidade de vida!
-              </Badge>
+             
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-                Sua Visão Está <span className="text-[#fff]">Embaçada?</span> Não Deixe para Depois!
+                Oftalmologista em <span className="text-[#fff]">Feira de Santana</span>
               </h1>
 
               <p className="text-xl text-white leading-relaxed">
@@ -74,31 +74,31 @@ export default function OftalmologiaLP() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
-               
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-[#008B47] text-[#008B47] hover:bg-[#fff]/50 text-lg px-8 py-4 font-bold"
+                <Link 
+                  href="https://wa.me/557530268494" 
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <Phone className="h-5 w-5 mr-2" />
-                  AGENDAR CONSULTA
-                </Button>
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="border-[#008B47] text-[#008B47] hover:bg-[#fff]/50 text-lg px-8 py-4 font-bold"
+                  >
+                   
+                    AGENDAR CONSULTA
+                  </Button>
+                </Link>
               </div>
-
-              
             </div>
 
-            <div className="relative">
-              <div className="bg-white rounded-2xl">
-                <img
-                  src="/5.png?height=500&width=500"
-                  alt="Médico oftalmologista realizando exame"
-                  className="w-full h-full object-cover rounded-lg"
-                />
-                <div className="absolute -top-4 -right-4 bg-[#008B47] text-white p-4 rounded-full">
-                  <Eye className="h-8 w-8" />
-                </div>
-              </div>
+            <div className="relative flex justify-end">
+              <Image
+                src="/5.png"
+                alt="Dermatologista examinando pele com equipamento especializado"
+                width={500}
+                height={500}
+                className="rounded-3xl"
+              />
             </div>
           </div>
         </div>
@@ -165,42 +165,60 @@ export default function OftalmologiaLP() {
               <AlertTriangle className="h-6 w-6 text-[#008B47] mr-2" />
               <span className="font-semibold text-[#008B47]">Dor nos olhos ou visão turva?</span>
             </div>
-            <Button className="bg-[#008B47] hover:bg-[#2EA55C] text-white font-bold">AGENDAR CONSULTA</Button>
+            <Link 
+              href="https://wa.me/557530268494" 
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button size="lg" className="bg-[#008B47] hover:bg-[#2EA55C] text-white font-bold">AGENDAR CONSULTA</Button>
+            </Link>
           </div>
         </div>
       </section>
 
       {/* Sinais de Alerta */}
-      <section className="py-16 bg-[#8DBF44]/10">
+      <section 
+        className="py-16 text-white relative overflow-hidden"
+        style={{
+          background: `linear-gradient(135deg, #008B47 0%, #2EA55C 50%, #8DBF44 100%)`,
+        }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Você Tem Algum Dessas Queixas?</h2>
-            <p className="text-xl text-gray-600">Não ignore os sinais que seu corpo está dando</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Você Tem Algum Dessas Queixas?</h2>
+            <p className="text-xl text-white/90">Não ignore os sinais que seu corpo está dando</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6 mb-8">
-            <div className="flex items-center p-4 bg-white rounded-lg shadow-sm">
-              <AlertTriangle className="h-6 w-6 text-[#008B47] mr-4 flex-shrink-0" />
-              <span className="text-gray-800">Dificuldade para ler de perto ou de longe</span>
+            <div className="flex items-center p-4 bg-white/10 rounded-lg backdrop-blur-sm">
+              <AlertTriangle className="h-6 w-6 text-white mr-4 flex-shrink-0" />
+              <span className="text-white">Dificuldade para ler de perto ou de longe</span>
             </div>
-            <div className="flex items-center p-4 bg-white rounded-lg shadow-sm">
-              <AlertTriangle className="h-6 w-6 text-[#008B47] mr-4 flex-shrink-0" />
-              <span className="text-gray-800">Dores de cabeça frequentes</span>
+            <div className="flex items-center p-4 bg-white/10 rounded-lg backdrop-blur-sm">
+              <AlertTriangle className="h-6 w-6 text-white mr-4 flex-shrink-0" />
+              <span className="text-white">Dores de cabeça frequentes</span>
             </div>
-            <div className="flex items-center p-4 bg-white rounded-lg shadow-sm">
-              <AlertTriangle className="h-6 w-6 text-[#008B47] mr-4 flex-shrink-0" />
-              <span className="text-gray-800">Olhos vermelhos ou secura constante</span>
+            <div className="flex items-center p-4 bg-white/10 rounded-lg backdrop-blur-sm">
+              <AlertTriangle className="h-6 w-6 text-white mr-4 flex-shrink-0" />
+              <span className="text-white">Olhos vermelhos ou secura constante</span>
             </div>
-            <div className="flex items-center p-4 bg-white rounded-lg shadow-sm">
-              <AlertTriangle className="h-6 w-6 text-[#008B47] mr-4 flex-shrink-0" />
-              <span className="text-gray-800">Visão dupla ou flashes de luz</span>
+            <div className="flex items-center p-4 bg-white/10 rounded-lg backdrop-blur-sm">
+              <AlertTriangle className="h-6 w-6 text-white mr-4 flex-shrink-0" />
+              <span className="text-white">Visão dupla ou flashes de luz</span>
             </div>
           </div>
 
           <div className="text-center">
-            <Button size="lg" className="bg-[#008B47] hover:bg-[#2EA55C] text-white text-lg px-8 py-4 font-bold">
-             AGENDAR CONSULTA
-            </Button>
+            <Link 
+              href="https://wa.me/557530268494" 
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button size="lg" className="bg-[#008B47] hover:bg-[#2EA55C] text-white text-lg px-8 py-4 font-bold">
+                
+                AGENDAR CONSULTA
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -253,14 +271,19 @@ export default function OftalmologiaLP() {
       </section>
 
       {/* Depoimentos */}
-      <section id="depoimentos" className="py-16 bg-[#8DBF44]/10">
+      <section 
+        className="py-16 text-white relative overflow-hidden"
+        style={{
+          background: `linear-gradient(135deg, #008B47 0%, #2EA55C 50%, #8DBF44 100%)`,
+        }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">O que dizem nossos pacientes</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">O que dizem nossos pacientes</h2>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-8">
-            <Card className="bg-white">
+            <Card className="bg-white/10 backdrop-blur-sm border-white/20">
               <CardContent className="p-6">
                 <div className="flex items-center mb-4">
                   <img
@@ -269,21 +292,21 @@ export default function OftalmologiaLP() {
                     className="w-12 h-12 rounded-full mr-4"
                   />
                   <div>
-                    <h4 className="font-semibold">Maria Silva</h4>
-                    <div className="flex text-[#008B47]">
+                    <h4 className="font-semibold text-white">Maria Silva</h4>
+                    <div className="flex text-white">
                       {[...Array(5)].map((_, i) => (
                         <Star key={i} className="h-4 w-4 fill-current" />
                       ))}
                     </div>
                   </div>
                 </div>
-                <p className="text-gray-600 italic">
+                <p className="text-white/90 italic">
                   "Finalmente achei óculos que funcionam! O médico foi super atencioso e explicou tudo detalhadamente."
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="bg-white">
+            <Card className="bg-white/10 backdrop-blur-sm border-white/20">
               <CardContent className="p-6">
                 <div className="flex items-center mb-4">
                   <img
@@ -292,30 +315,30 @@ export default function OftalmologiaLP() {
                     className="w-12 h-12 rounded-full mr-4"
                   />
                   <div>
-                    <h4 className="font-semibold">João Santos</h4>
-                    <div className="flex text-[#008B47]">
+                    <h4 className="font-semibold text-white">João Santos</h4>
+                    <div className="flex text-white">
                       {[...Array(5)].map((_, i) => (
                         <Star key={i} className="h-4 w-4 fill-current" />
                       ))}
                     </div>
                   </div>
                 </div>
-                <p className="text-gray-600 italic">
+                <p className="text-white/90 italic">
                   "Descobri meu glaucoma cedo graças ao exame de pressão aqui. Salvaram minha visão!"
                 </p>
               </CardContent>
             </Card>
           </div>
 
-          <div className="text-center bg-white rounded-lg p-6">
+          <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-6">
             <div className="flex items-center justify-center space-x-8">
               <div className="flex items-center">
-                <Users className="h-6 w-6 text-[#008B47] mr-2" />
-                <span className="font-semibold">10+ anos de experiência</span>
+                <Users className="h-6 w-6 text-white mr-2" />
+                <span className="font-semibold text-white">10+ anos de experiência</span>
               </div>
               <div className="flex items-center">
-                <Star className="h-6 w-6 text-[#008B47] mr-2" />
-                <span className="font-semibold">97% de satisfação em exames</span>
+                <Star className="h-6 w-6 text-white mr-2" />
+                <span className="font-semibold text-white">97% de satisfação em exames</span>
               </div>
             </div>
           </div>
@@ -332,37 +355,51 @@ export default function OftalmologiaLP() {
           <div className="space-y-6">
             <Card>
               <CardContent className="p-6">
-                <h3 className="font-semibold text-lg mb-2">Preciso de encaminhamento para consulta?</h3>
+                <h3 className="font-semibold text-lg mb-2">Como funciona o atendimento?</h3>
                 <p className="text-gray-600">
-                  Não! Agende diretamente conosco. Atendemos particular sem necessidade de plano de saúde.
+                  Presencial com agendamento via WhatsApp. Atendimento ágil e sem filas.
                 </p>
               </CardContent>
             </Card>
 
             <Card>
               <CardContent className="p-6">
-                <h3 className="font-semibold text-lg mb-2">O exame de retina dói?</h3>
+                <h3 className="font-semibold text-lg mb-2">Trabalha com convênios?</h3>
                 <p className="text-gray-600">
-                  É indolor e rápido (menos de 10 minutos). Utilizamos equipamentos modernos para seu conforto.
+                  Não. Atendemos exclusivamente como clínica particular, com recibo para reembolso.
                 </p>
               </CardContent>
             </Card>
 
             <Card>
               <CardContent className="p-6">
-                <h3 className="font-semibold text-lg mb-2">Posso fazer exame se usar lente de contato?</h3>
+                <h3 className="font-semibold text-lg mb-2">Como agendo minha consulta?</h3>
                 <p className="text-gray-600">
-                  Sim, mas recomendamos vir sem lentes no dia do exame para resultados mais precisos.
+                  Entre em contato pelo WhatsApp (75) 3026‑8494 ou via redes sociais.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="font-semibold text-lg mb-2">Qual o valor das consultas?</h3>
+                <p className="text-gray-600">
+                  Consultas a partir de R$ 150 e procedimentos desde R$ 80.
                 </p>
               </CardContent>
             </Card>
           </div>
 
           <div className="text-center mt-12">
-            <Button size="lg" className="bg-[#008B47] hover:bg-[#2EA55C] text-white text-lg px-8 py-4 font-bold">
-              <Phone className="h-5 w-5 mr-2" />
-             AGENDAR CONSULTA
-            </Button>
+            <Link 
+              href="https://wa.me/557530268494" 
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button size="lg" className="bg-[#008B47] hover:bg-[#2EA55C] text-white text-lg px-8 py-4 font-bold">
+                AGENDAR CONSULTA
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
